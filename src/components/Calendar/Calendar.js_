@@ -1,0 +1,38 @@
+import React from "react";
+import "./calendar.scss";
+
+import Legend from "../Legend/Legend";
+
+import Moment from "react-moment";
+import moment from "moment";
+Moment.globalFormat = "ddd D/M";
+
+export default function Calendar() {
+  return (
+    <div className="cal-wrapper">
+      <CurrentDate />
+      <CalendarGrid />
+      <Legend />
+    </div>
+  );
+}
+
+const CurrentDate = () => (
+  <Moment className={date} format={"dddd MMMM D YYYY"}>
+    {date}
+  </Moment>
+);
+
+const CalendarGrid = () => (
+  <div className="cal_grid" style={{ display: "flex" }}>
+    <Days />
+  </div>
+);
+
+const date = new Date();
+const Days = () =>
+  Array(7)
+    .fill()
+    .map((_, x) => (
+      <Moment style={{ flex: "1" }} date={date} add={{ days: x }} key={x} />
+    ));

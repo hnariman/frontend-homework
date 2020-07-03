@@ -1,0 +1,67 @@
+.cal-wrapper {
+  display: grid; 
+  height: 100vh;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  .date {
+    border: 1px solid #c1c1c1ff;
+    background: #fff;
+    font-size:1.5em;
+    text-align:center;
+    padding:.5em;
+    grid-column:1/6;
+    grid-row:1/2;
+    line-height: 4em;
+  }
+  .legend {
+    text-align: left;
+    padding: 1em;
+    background: #fff;
+    border: 1px solid #c1c1c1ff;
+    grid-row: 1/7;
+    grid-column: 6/7;
+    ul {
+      padding:0;
+      li.legend-list {
+        list-style-type: none;
+        display: flex;
+        line-height: 2em;
+      }
+      .circle{
+        margin-left:0;
+        padding-left:0;
+        border-radius:50%;
+        height: .7em;
+        width: .7em;
+      }
+      span.legend-text {
+        line-height: 2em;
+      }
+    }
+    .new-event-button{
+      min-width: 25vw;
+      color: white;
+      background: darkblue;
+      border: none;
+      border-radius: 2px;
+      line-height:1em;
+      font-weight: bold;
+      font-size: .6em;
+      padding: 1.5em;
+    }
+}
+  .cal_grid {
+    border: 1px solid #c1c1c1ff;
+    background: #fff;
+    grid-column: 1/6;
+    grid-row:2/7;
+  }
+  
+}
+
+.grey { background: grey; }
+.green { background: green; }
+.yellow { background: #FC3;}
+.blue { background: #ADD8E6; }
+.darkblue { background: #44B; }
+.darkgreen { background: darkgreen; }
