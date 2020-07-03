@@ -68,18 +68,21 @@ const Days = ({ days, width, date = new Date() }) => {
               month: "short",
             })}
           </div>
-          <Hours empty={true} />
+          <Hours show={12} empty={true} width={width} />
         </div>
       </div>
     ));
 };
 
-const Hours = ({ show = 24, height = 70, empty = false }) => {
+const Hours = ({ show = 24, height = 70, width = "100vh", empty = false }) => {
   const style = {
     border: "1px solid silver",
     height: `${height / show / 2}vh`,
+    lineHeight: `${height / show / 2}vh`,
+    width: `${width}`,
     background: "#ffffff11",
     margin: "0",
+    color: "#00000077",
   };
   return Array(show)
     .fill()
@@ -89,16 +92,14 @@ const Hours = ({ show = 24, height = 70, empty = false }) => {
           <div className="hours"></div>
         ) : (
           <div style={style} className="hours">
-            {" "}
-            {x}:00{" "}
+            {x}:00
           </div>
         )}
         {empty ? (
           <div className="hours"></div>
         ) : (
           <div style={style} className="hours">
-            {" "}
-            {x}:30{" "}
+            {x}:30
           </div>
         )}
       </>
