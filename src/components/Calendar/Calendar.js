@@ -1,5 +1,5 @@
 import React from "react";
-import "./calendar.scss";
+//import "./calendar.scss";
 
 import Legend from "../Legend/Legend";
 
@@ -14,7 +14,16 @@ export default function Calendar() {
 }
 
 const CurrentDate = () => (
-  <h2>
+  <h2
+    style={{
+      lineHeight: "2em",
+      fontSize: "2em",
+      textAlign: "center",
+      width: "60vw",
+      height: "10vh",
+      margin: "0",
+    }}
+  >
     {new Date()
       .toLocaleString("en-US", {
         weekday: "short",
@@ -40,7 +49,14 @@ const Days = ({ days, width, date = new Date() }) => {
     .fill()
     .map((_, x) => (
       <div
-        style={{ border: "1px solid red", width: `${width / days}vw` }}
+        style={{
+          border: "1px solid silver",
+          width: `${width / days}vw`,
+          height: "100%",
+          zIndex: "2",
+          background: "#ffffff11",
+          margin: "0",
+        }}
         key={x}
         onClick={printDate.bind(x)}
       >
@@ -52,34 +68,39 @@ const Days = ({ days, width, date = new Date() }) => {
               month: "short",
             })}
           </div>
+          <Hours empty={true} />
         </div>
       </div>
     ));
 };
 
-const Hours = ({ show = 24, height = 70 }) => {
+const Hours = ({ show = 24, height = 70, empty = false }) => {
+  const style = {
+    border: "1px solid silver",
+    height: `${height / show / 2}vh`,
+    background: "#ffffff11",
+    margin: "0",
+  };
   return Array(show)
     .fill()
     .map((_, x) => (
       <>
-        <div
-          style={{
-            border: "1px solid red",
-            height: `${height / show / 2}vh`,
-          }}
-          className="hours"
-        >
-          {x}:00
-        </div>
-        <div
-          style={{
-            border: "1px solid red",
-            height: `${height / show / 2}vh`,
-          }}
-          className="hours"
-        >
-          {x}:30
-        </div>
+        {empty ? (
+          <div className="hours"></div>
+        ) : (
+          <div style={style} className="hours">
+            {" "}
+            {x}:00{" "}
+          </div>
+        )}
+        {empty ? (
+          <div className="hours"></div>
+        ) : (
+          <div style={style} className="hours">
+            {" "}
+            {x}:30{" "}
+          </div>
+        )}
       </>
     ));
 };

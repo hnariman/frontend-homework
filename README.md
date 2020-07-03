@@ -1,55 +1,68 @@
-# Frontend
-## Компонент календаря с отмеченными событиями
-Необходимо написать приложение, которое рендерит календарь и события на нем на основе ответа от сервера.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Стек: React, Redux, Saga, Reselect. Инит проекта можно сделать через [CRA](https://github.com/facebook/create-react-app). В проекте необходимо использовать синтаксис ES6+. Препроцессоры CSS - по желанию.
+## Available Scripts
 
-## Базовый вариант задания
-Приложение получает по АПИ данные в виде массива объектов, в которых содержится информация об отмеченных интервалах.
+In the project directory, you can run:
 
-Пример ответа:
-```
-[
-  {
-    "id": 1,
-    "start": "2019-08-05T08:15:00+04:00",
-    "end": "2019-08-05T14:00:00+04:00",
-    "comment": "Комметарий к событию. Он может быть довольно длинным"
-  },
-  {
-    "id": 2,
-    "start": "2019-08-05T09:00:00+04:00",
-    "end": "2019-08-05T11:30:00+04:00",
-    "comment": null
-  },
-]
-```
+### `yarn start`
 
-Компонент выглядит согласно нижеприложенному макету (небольшие отклонения допускаются)
-![test-calendar-base](docs/test-calendar-base.jpg)
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Расширенный вариант задания 1
-Сделать приложение адаптивным, чтобы все корректно отображалось и на десктопе и на мобильных устройствах.
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-## Расширенный вариант задания 2
-Реализовать функционал добавления Event. По кнопке открывается модельное окно, в котором пользователь добавляет новое событие. При добавлении необходимо событие показать на календаре и сделать POST запрост по любому урлу (неважно, что будет ошибка).
+### `yarn test`
 
-Пример запроса к серверу:
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-```
-{
-    "start": "2019-08-05T08:15:00+04:00",
-    "end": "2019-08-05T14:00:00+04:00",
-    "comment": "Комметарий к событию. Он может быть довольно длинным"
-  }
-```
+### `yarn build`
 
-Компонент выбора даты/времени использвать на свое усмотрение.
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Пример модального окна с заполненными полями:
-![test-calendar-ext-filled](docs/test-calendar-ext-filled.jpg)
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-## Плюсом будет:
-*  Детальное Readme.md
-*  Использование eslint и airbnb
-*  Покрытие кода тестами (jest + enzyme)
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `yarn eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `yarn build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
